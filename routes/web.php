@@ -25,7 +25,11 @@ Route::get('/welcome', function () {
 //3-Call Controller Function
 Route::get('/',[HomeController::class,'index'])->name('home');
 //4-Route-> Controller Function
-Route::get('/',[HomeController::class,'test'])->name('test');
+Route::get('/test',[HomeController::class,'test'])->name('test');
+
+//5-Route with parameters
+Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
