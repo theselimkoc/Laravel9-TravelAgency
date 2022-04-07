@@ -12,11 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 | Test Comment
 */
-
-Route::get('/', function () {
-    return view('welcome');
+// 1- Do something route
+Route::get('/hello', function () {
+    return 'Hello World';
 });
 
+// 2- Call view in route
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
