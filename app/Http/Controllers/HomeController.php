@@ -9,7 +9,7 @@ class HomeController extends Controller
     //
     public function  index()
     {
-        echo "Index Function";
+        return view('home.index');
     }
     public function  test()
     {
@@ -26,5 +26,18 @@ class HomeController extends Controller
         'number' => $number
 
     ]);
+    }
+    public function  save(Request $request)
+    {
+        //echo "Save Function<br>";
+        //echo "First Name:",$_REQUEST["fname"];
+        //echo "<br>Last Name:",$_REQUEST["lname"];
+        return view('home.test2',
+            [
+                'fname' => $_REQUEST["fname"],
+                'lname' =>  $_REQUEST["lname"]
+
+            ]);
+
     }
 }
