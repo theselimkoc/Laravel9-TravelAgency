@@ -21,6 +21,7 @@ Route::get('/hello', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
+//3-Call Controller Function
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
