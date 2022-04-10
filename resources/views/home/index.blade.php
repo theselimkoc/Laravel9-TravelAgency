@@ -1,7 +1,5 @@
 @extends('layouts.frontbase')
-
 @section('title', 'Travel Agency Project')
-
 
 @section('content')
     <div class="wrap">
@@ -371,5 +369,4 @@
         </div>
     </div>
 
-    
 @endsection
