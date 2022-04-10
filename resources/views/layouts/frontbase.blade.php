@@ -1,50 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Luxe &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FREEHTML5.CO" />
 
-    <!-- GOOGLE FONT -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <!--
+      //////////////////////////////////////////////////////
 
-    <!-- CSS LIBRARY -->
-    <!-- Bootstrap -->
-    <link type="text/css" href="css/lib/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" href="css/lib/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+      FREE HTML5 TEMPLATE
+      DESIGNED & DEVELOPED by FREEHTML5.CO
 
-    <!-- Font Icon -->
-    <link type="text/css" href="css/lib/font-awesome.min.css" rel="stylesheet">
-    <link type="text/css" href="css/lib/cortana.css" rel="stylesheet">
+      Website: 		http://freehtml5.co/
+      Email: 			info@freehtml5.co
+      Twitter: 		http://twitter.com/fh5co
+      Facebook: 		https://www.facebook.com/fh5co
 
-    <!-- Revolution Slider -->
-    <link type="text/css" href="rs-plugin/css/settings.css" rel="stylesheet">
-    <!-- Owl Carousel -->
-    <link type="text/css" href="css/lib/owl.carousel.css" rel="stylesheet">
+      //////////////////////////////////////////////////////
+       -->
 
-    <!-- Select into div -->
-    <link type="text/css" href="css/lib/select2.min.css" rel="stylesheet">
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
 
-    <!-- Magnific Popup -->
-    <link type="text/css" href="css/lib/magnific-popup.css" rel="stylesheet">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700italic,900,700,900italic' rel='stylesheet' type='text/css'> -->
 
-    <!-- Custom CSS -->
-    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <!-- Stylesheets -->
+    <!-- Dropdown Menu -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/superfish.css">
+    <!-- Owl Slider -->
+    <!-- <link rel="stylesheet" href="{{asset('assets')}}/css/owl.carousel.css"> -->
+    <!-- <link rel="stylesheet" href="{{asset('assets')}}/css/owl.theme.default.min.css"> -->
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap-datepicker.min.css">
+    <!-- CS Select -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/cs-select.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/cs-skin-border.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/themify-icons.css">
+    <!-- Flat Icon -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/flaticon.css">
+    <!-- Icomoon -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/icomoon.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/flexslider.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="{{asset('assets')}}/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="{{asset('assets')}}/js/respond.min.js"></script>
     <![endif]-->
 
-    <title>@yield('title')</title>
 </head>
 <body>
+
+
 @include("home.header")
 
+@include("home.slider")
 
 @section('sidebar')
     @include("home.sidebar")
@@ -56,5 +90,5 @@
 
 @include("home.footer")
 @yield('foot')
-</body>
+
 </html>
