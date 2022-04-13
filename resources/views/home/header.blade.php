@@ -7,12 +7,12 @@
                         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
                         <h1 id="fh5co-logo"><a href="index.html">Luxe</a></h1>
 
-                            @include("home.sidebar")
+                        @include("home.sidebar")
+
                     </div>
                 </div>
             </header>
 
         </div>
         <!-- end:fh5co-header -->
-    </div>
-</div>
+
