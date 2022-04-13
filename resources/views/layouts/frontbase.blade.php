@@ -39,14 +39,15 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico">
-    <!-- <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700italic,900,700,900italic' rel='stylesheet' type='text/css'> -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700italic,900,700,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Stylesheets -->
     <!-- Dropdown Menu -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/superfish.css">
+
     <!-- Owl Slider -->
-    <!-- <link rel="stylesheet" href="{{asset('assets')}}/css/owl.carousel.css"> -->
-    <!-- <link rel="stylesheet" href="{{asset('assets')}}/css/owl.theme.default.min.css"> -->
+     <link rel="stylesheet" href="{{asset('assets')}}/css/owl.carousel.css">
+     <link rel="stylesheet" href="{{asset('assets')}}/css/owl.theme.default.min.css">
     <!-- Date Picker -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap-datepicker.min.css">
     <!-- CS Select -->
@@ -80,8 +81,7 @@
 
 @include("home.slider")
 
-@section('sidebar')
-    @include("home.sidebar")
+
 @show
 
 
@@ -90,5 +90,30 @@
 
 @include("home.footer")
 @yield('foot')
+
+<!-- Javascripts -->
+<script src="{{asset('assets')}}/js/jquery-2.1.4.min.js"></script>
+<!-- Dropdown Menu -->
+<script src="{{asset('assets')}}/js/hoverIntent.js"></script>
+<script src="{{asset('assets')}}/js/superfish.js"></script>
+<!-- Bootstrap -->
+<script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="{{asset('assets')}}/js/jquery.waypoints.min.js"></script>
+<!-- Counters -->
+<script src="{{asset('assets')}}/js/jquery.countTo.js"></script>
+<!-- Stellar Parallax -->
+<script src="{{asset('assets')}}/js/jquery.stellar.min.js"></script>
+<!-- Owl Slider -->
+ <script src="{{asset('assets')}}/js/owl.carousel.min.js"></script>
+<!-- Date Picker -->
+<script src="{{asset('assets')}}/js/bootstrap-datepicker.min.js"></script>
+<!-- CS Select -->
+<script src="{{asset('assets')}}/js/classie.js"></script>
+<script src="{{asset('assets')}}/js/selectFx.js"></script>
+<!-- Flexslider -->
+<script src="{{asset('assets')}}/js/jquery.flexslider-min.js"></script>
+
+<script src="{{asset('assets')}}/js/custom.js"></script>
 </body>
 </html>

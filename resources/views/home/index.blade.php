@@ -78,7 +78,7 @@
 
             <div class="row">
                 <div class="feature-full-1col">
-                    <div class="image" style="background-image: url(images/hotel_feture_1.jpg);">
+                    <div class="image" style="background-image: url('{{asset('assets')}}/images/hotel_feture_1.jpg');">
                         <div class="descrip text-center">
                             <p><small>For as low as</small><span>$100/night</span></p>
                         </div>
@@ -92,7 +92,7 @@
 
                 <div class="feature-full-2col">
                     <div class="f-hotel">
-                        <div class="image" style="background-image: url(images/hotel_feture_2.jpg);">
+                        <div class="image" style="background-image: url('{{asset('assets')}}/images/hotel_feture_2.jpg');">
                             <div class="descrip text-center">
                                 <p><small>For as low as</small><span>$99/night</span></p>
                             </div>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="f-hotel">
-                        <div class="image" style="background-image: url(images/hotel_feture_3.jpg);">
+                        <div class="image" style="background-image: url('{{asset('assets')}}/images/hotel_feture_3.jpg');">
                             <div class="descrip text-center">
                                 <p><small>For as low as</small><span>$99/night</span></p>
                             </div>
@@ -168,7 +168,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="images/tab_img_1.jpg" class="img-responsive" alt="Image">
+                                    <img src="{{asset('assets')}}/images/tab_img_1.jpg" class="img-responsive" alt="Image">
                                 </div>
                                 <div class="col-md-6">
                                     <span class="super-heading-sm">World Class</span>
@@ -187,7 +187,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="images/tab_img_2.jpg" class="img-responsive" alt="Image">
+                                    <img src="{{asset('assets')}}/images/tab_img_2.jpg" class="img-responsive" alt="Image">
                                 </div>
                                 <div class="col-md-6">
                                     <span class="super-heading-sm">World Class</span>
@@ -206,7 +206,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="images/tab_img_3.jpg" class="img-responsive" alt="Image">
+                                    <img src="{{asset('assets')}}/images/tab_img_3.jpg" class="img-responsive" alt="Image">
                                 </div>
                                 <div class="col-md-6">
                                     <span class="super-heading-sm">World Class</span>
@@ -225,7 +225,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="images/tab_img_4.jpg" class="img-responsive" alt="Image">
+                                    <img src="{{asset('assets')}}/images/tab_img_4.jpg" class="img-responsive" alt="Image">
                                 </div>
                                 <div class="col-md-6">
                                     <span class="super-heading-sm">World Class</span>
@@ -244,7 +244,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="images/tab_img_5.jpg" class="img-responsive" alt="Image">
+                                    <img src="{{asset('assets')}}/images/tab_img_5.jpg" class="img-responsive" alt="Image">
                                 </div>
                                 <div class="col-md-6">
                                     <span class="super-heading-sm">World Class</span>
@@ -263,7 +263,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="images/tab_img_6.jpg" class="img-responsive" alt="Image">
+                                    <img src="{{asset('assets')}}/images/tab_img_6.jpg" class="img-responsive" alt="Image">
                                 </div>
                                 <div class="col-md-6">
                                     <span class="super-heading-sm">World Class</span>
@@ -333,7 +333,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="blog-grid" style="background-image: url(images/image-1.jpg);">
+                    <div class="blog-grid" style="background-image: url('{{asset('assets')}}/images/image-1.jpg');">
                         <div class="date text-center">
                             <span>09</span>
                             <small>Aug</small>
@@ -344,7 +344,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="blog-grid" style="background-image: url(images/image-2.jpg);">
+                    <div class="blog-grid" style="background-image: url('{{asset('assets')}}/images/image-2.jpg');">
                         <div class="date text-center">
                             <span>09</span>
                             <small>Aug</small>
@@ -355,7 +355,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="blog-grid" style="background-image: url(images/image-3.jpg);">
+                    <div class="blog-grid" style="background-image: url('{{asset('assets')}}/images/image-3.jpg');">
                         <div class="date text-center">
                             <span>09</span>
                             <small>Aug</small>

@@ -247,5 +247,5 @@
 
     </nav>
 
-</div>
 <!-- END HEADER SECTION -->
+</div>>
