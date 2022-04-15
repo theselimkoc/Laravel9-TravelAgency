@@ -34,7 +34,7 @@
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
-<body class="padTop53 " >
+<body class="padTop53 ">
 @include("admin.header")
 
 
