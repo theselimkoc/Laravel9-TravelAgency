@@ -15,9 +15,9 @@
                     <h2>Add Category </h2>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-12">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item active">Add Category</li>
                 </ol>
             <hr />
@@ -27,8 +27,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <form role="form" action="/admin/category/store" method="post">
+                        <div class="col-lg-12">
+                            <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Title</label>
@@ -43,9 +43,13 @@
                                     <input type="text" class="form-control" name="description" placeholder="Description">
                                 </div>
                                 <div class="form-group">
-                                    <label for="img">Select image:</label>
-                                    <input type="file" id="img" name="img" accept="image/*">
-                                    <input type="submit">
+                                    <label for="img">Image</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="image">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose Image File</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
