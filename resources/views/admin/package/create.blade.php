@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Product')
+@section('title', 'Add Package')
 
 
 @section('content')
@@ -12,27 +12,27 @@
                 <div class="col-lg-12">
 
 
-                    <h2>Add Product </h2>
+                    <h2>Add Package </h2>
                 </div>
             </div>
             <div class="col-lg-12">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                    <li class="breadcrumb-item active">Add Product</li>
+                    <li class="breadcrumb-item active">Add Package</li>
                 </ol>
             <hr />
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Product Elements
+                    Package Elements
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form role="form" action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{route('admin.package.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label>Parent Product</label>
-                                    <select class="form-control select2" name="parent_id" style="">
+                                    <select class="form-control select2" name="category_id" >
                                         @foreach($data as $rs)
                                             <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)}}</option>
                                         @endforeach
@@ -52,25 +52,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Price</label>
-                                    <input type="number" class="form-control" name="price" value="0">
+                                    <input type="number" class="form-control" name="price" placeholder="Price">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Quantity</label>
-                                    <input type="number" class="form-control" name="quantity" value="0">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Tax %</label>
-                                    <input type="number" class="form-control" name="tax" value="0">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Availability</label>
-                                    <input type="number" class="form-control" name="availability" value="0">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Description</label>
+                                    <label for="exampleInputEmail1">Detail</label>
                                     <textarea class="form-control" name="detail">
 
                                     </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Info</label>
+                                    <input type="text" class="form-control" name="info" placeholder="Info">
                                 </div>
                                 <div class="form-group">
                                     <label for="img">Image</label>

@@ -27,8 +27,8 @@
                 <i class="icon-table"></i> Categories</a>
         </li>
         <li class="panel">
-            <a href="/admin/product" >
-                <i class="icon-table"></i> Products</a>
+            <a href="/admin/package" >
+                <i class="icon-table"></i> Packages</a>
         </li>
         <li class="panel">
             <a href="/admin/comment" >

@@ -4,11 +4,11 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Product;
+use App\Models\Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class AdminProductController extends Controller
+class AdminPackageController extends Controller
 {
         /**
          * Display a listing of the resource.
@@ -17,8 +17,8 @@ class AdminProductController extends Controller
          */
         public function index()
         {
-            $data = Product::all();
-            return view('admin.product.index', [
+            $data = Package::all();
+            return view('admin.package.index', [
                 'data' => $data
             ]);
         }
@@ -32,7 +32,7 @@ class AdminProductController extends Controller
         {
             //
             $data = Category::all();
-            return view('admin.product.create', [
+            return view('admin.package.create', [
                 'data' => $data
             ]);
         }
@@ -46,35 +46,33 @@ class AdminProductController extends Controller
         public function store(Request $request)
         {
             //
-            $data = new Product();
+            $data = new Package();
             $data->category_id = $request->category_id;
             $data->user_id = 0;// $request->user_id;
             $data->title = $request->title;
             $data->keywords = $request->keywords;
             $data->detail = $request->detail;
             $data->price = $request->price;
-            $data->quantity = $request->quantity;
-            $data->tax = $request->tax;
-            $data->availability = $request->availability;
+            $data->info = $request->info;
             $data->status = $request->status;
             if ($request->file('image')) {
                 $data->image = $request->file('image')->store('images');
             }
             $data->save();
-            return redirect('admin/product');
+            return redirect('admin/package');
         }
 
         /**
          * Display the specified resource.
          *
-         * @param \App\Models\Product $product
+         * @param \App\Models\Package $package
          * @return \Illuminate\Http\Response
          */
-        public function show(Product $product, $id)
+        public function show(Package $package, $id)
         {
             //
-            $data = Product::find($id);
-            return view('admin.product.show', [
+            $data = Package::find($id);
+            return view('admin.package.show', [
                 'data' => $data
             ]);
         }
@@ -82,16 +80,16 @@ class AdminProductController extends Controller
         /**
          * Show the form for editing the specified resource.
          *
-         * @param \App\Models\Product $product
+         * @param \App\Models\Package $package
          * @return \Illuminate\Http\Response
          */
-        public function edit(Product $product, $id)
+        public function edit(Package $package, $id)
 
         {
             //
-            $data = Product::find($id);
+            $data = Package::find($id);
             $datalist = Category::all();
-            return view('admin.product.edit', [
+            return view('admin.package.edit', [
                 'data' => $data,
                 'datalist' => $datalist
             ]);
@@ -101,44 +99,43 @@ class AdminProductController extends Controller
          * Update the specified resource in storage.
          *
          * @param \Illuminate\Http\Request $request
-         * @param \App\Models\Product $product
+         * @param \App\Models\Package $package
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, Product $product, $id)
+        public function update(Request $request, Package $package, $id)
         {
             //
 
-            $data = Product::find($id);
+            $data = Package::find($id);
             $data->category_id = $request->category_id;
             $data->user_id = 0;// $request->user_id;
             $data->title = $request->title;
             $data->keywords = $request->keywords;
             $data->detail = $request->detail;
             $data->price = $request->price;
-            $data->quantity = $request->quantity;
-            $data->tax = $request->tax;
-            $data->availability = $request->availability;
             $data->status = $request->status;
             if ($request->file('image')) {
                 $data->image = $request->file('image')->store('images');
             }
             $data->save();
-            return redirect('admin/product');
+            return redirect('admin/package');
         }
 
         /**
          * Remove the specified resource from storage.
          *
-         * @param \App\Models\Product $product
+         * @param \App\Models\Package $package
          * @return \Illuminate\Http\Response
          */
-        public function destroy(Product $product, $id)
+        public function destroy(Package $package, $id)
         {
             //
-            $data = Product::find($id);
-            Storage::delete($data->image);
+            $data = Package::find($id);
+            if ($data->image && Storage::disk('public')->exists($data->image)) {
+                Storage::delete($data->image);
+            }
             $data->delete();
-            return redirect('admin/product');
+            return redirect('admin/package');
 
         }
     }

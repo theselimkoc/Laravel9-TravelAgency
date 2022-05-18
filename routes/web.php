@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminPanel\AdminProductController;
+use App\Http\Controllers\AdminPanel\AdminPackageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -55,8 +55,8 @@ Route::get('/',[AdminHomeController::class,'index'])->name('index');
             Route::get('/show/{id}','show')->name('show');
     });
 
-    //************************************ADMIN PRODUCT ROUTES********************//
-    Route::prefix('/product')->name('product.')->controller(AdminProductController::class)->group(function () {
+    //************************************ADMIN PACKAGES ROUTES********************//
+    Route::prefix('/package')->name('package.')->controller(AdminPackageController::class)->group(function () {
         Route::get('/','index')->name('index');
         Route::get('/create','create')->name('create');
         Route::post('/store','store')->name('store');
