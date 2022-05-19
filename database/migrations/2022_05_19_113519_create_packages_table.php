@@ -13,6 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
+
+
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->nullable();
@@ -27,11 +29,15 @@ return new class extends Migration
             $table->string('status',6)->default('False');
             $table->timestamps();
         });
-    }};
+    }
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-
+    public function down()
+    {
+        Schema::dropIfExists('packages');
+    }
+};

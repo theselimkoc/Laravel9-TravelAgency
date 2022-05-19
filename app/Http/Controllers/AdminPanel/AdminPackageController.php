@@ -4,7 +4,7 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Package;
+use App\Models\Packages as Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -51,6 +51,7 @@ class AdminPackageController extends Controller
             $data->user_id = 0;// $request->user_id;
             $data->title = $request->title;
             $data->keywords = $request->keywords;
+            $data->description = $request->description;
             $data->detail = $request->detail;
             $data->price = $request->price;
             $data->info = $request->info;
@@ -112,6 +113,8 @@ class AdminPackageController extends Controller
             $data->title = $request->title;
             $data->keywords = $request->keywords;
             $data->detail = $request->detail;
+            $data->description = $request->description;
+            $data->info = $request->info;
             $data->price = $request->price;
             $data->status = $request->status;
             if ($request->file('image')) {
