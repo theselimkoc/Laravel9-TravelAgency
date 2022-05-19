@@ -1,8 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add Package')
-
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
     <!--PAGE CONTENT -->
     <div id="content">
@@ -10,8 +11,6 @@
         <div class="inner" style="min-height:1200px;">
             <div class="row">
                 <div class="col-lg-12">
-
-
                     <h2>Add Package </h2>
                 </div>
             </div>
@@ -56,9 +55,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Detail</label>
-                                    <textarea class="form-control" name="detail">
+                                    <textarea class="form-control" id="detail" name="detail">
 
                                     </textarea>
+                                    <script>
+                                        ClassicEditor
+                                            .create( document.querySelector( '#detail' ) )
+                                            .then( editor => {
+                                                console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Info</label>

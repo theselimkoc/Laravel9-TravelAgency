@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Edit Category : '.$data->title)
-
+@section('head')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endsection
 
 @section('content')
     <!--PAGE CONTENT -->
@@ -93,5 +95,12 @@
     </div>
     <!--END PAGE CONTENT -->
 
-
+@section('foot')
+     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(function (){
+            //$summernote
+            $('.textarea').summernote()
+        } )
+    </script>
 @endsection
