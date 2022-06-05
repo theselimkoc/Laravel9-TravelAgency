@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Packages as Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,22 @@ class HomeController extends Controller
             'packagelist1'=>$packagelist1
         ]);
     }
+
+    public function  package($id)
+    {
+        $data=Package::find($id);
+        $images = DB::table('images')->where('package_id',$id)->get();
+        return view('home.package',[
+            'data'=>$data ,
+            'images'=>$images
+        ]);
+    }
+    public function  package_all()
+    {
+
+        return view('home.package_all');
+    }
+
     public function  test()
     {
         return view('home.test');

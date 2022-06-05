@@ -11,7 +11,7 @@
                                         <p><span>{{$rs->title}}</span></p>
                                         <h2>{{$rs->description}}</h2>
                                         <p>
-                                            <a href="#" class="btn btn-primary btn-lg">Book Now</a>
+                                            <a href="{{route('package',['id'=>$rs->id])}}" class="btn btn-primary btn-lg">Book Now</a>
                                         </p>
                                     </div>
                                 </div>

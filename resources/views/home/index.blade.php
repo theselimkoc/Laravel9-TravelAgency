@@ -2,6 +2,8 @@
 @section('title', 'Travel Agency Project')
 
 @section('content')
+    @include("home.slider")
+
     <div class="wrap">
         <div class="container">
             <div class="row">
@@ -86,7 +88,7 @@
                     <div class="desc">
                         <h3>{{$rs->title}}</h3>
                         <p>{{$rs->description}}</p>
-                        <p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+                        <p> <a href="{{route('package',['id'=>$rs->id])}}" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
                     </div>
                 </div>
                 @endforeach

@@ -2,6 +2,7 @@
 
 @section('title', 'Add Package')
 @section('head')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 @section('content')
@@ -105,4 +106,13 @@
     <!--END PAGE CONTENT -->
 
 
+@endsection
+            @section('foot')
+                <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+                <script>
+                    $(function (){
+                        //$summernote
+                        $('.textarea').summernote()
+                    } )
+                </script>
 @endsection

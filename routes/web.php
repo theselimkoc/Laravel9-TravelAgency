@@ -37,6 +37,8 @@ Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param'
 
 //6-Route with post
 Route::post('/save',[HomeController::class,'save'])->name('save');
+Route::get('/package',[HomeController::class,'package_all'])->name('package_all');
+Route::get('/package/{id}',[HomeController::class,'package'])->name('package');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -69,7 +71,8 @@ Route::get('/',[AdminHomeController::class,'index'])->name('index');
 
     //************************************ADMIN PACKAGES IMAGE GALLERY ROUTES********************//
     Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
-        Route::get('/{pid}','index')->name('index'); Route::post('/create/{pid}','create')->name('create');
+        Route::get('/{pid}','index')->name('index');
+        Route::post('/create/{pid}','create')->name('create');
         Route::post('/store/{pid}','store')->name('store');
         Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
     });

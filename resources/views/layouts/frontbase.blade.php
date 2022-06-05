@@ -79,7 +79,6 @@
 
 @include("home.header")
 
-@include("home.slider")
 
 
 @show
