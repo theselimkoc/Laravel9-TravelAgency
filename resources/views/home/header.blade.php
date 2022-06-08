@@ -5,7 +5,7 @@
                 <div class="container">
                     <div class="nav-header">
                         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                        <h1 id="fh5co-logo"><a href="index.html">Luxe</a></h1>
+                        <h1 id="fh5co-logo" style="color: #1a1a1a"><a href="{{route('home')}}">Luxe</a></h1>
 
                         @include("home.sidebar")
 
@@ -15,4 +15,5 @@
 
         </div>
         <!-- end:fh5co-header -->
-
+    </div>
+</div>

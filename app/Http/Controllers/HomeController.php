@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Packages as Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function maincategorylist()
+    {
+        return Category::where('parent_id','=',0)->with('children')->get();
+    }
     //
     public function  index()
     {
@@ -28,10 +33,15 @@ class HomeController extends Controller
             'images'=>$images
         ]);
     }
-    public function  package_all()
+    public function  categorypackages($id)
     {
 
-        return view('home.package_all');
+        $category=Category::find($id);
+        $packages = DB::table('packages')->where('category_id',$id)->get();
+        return view('home.categorypackages',[
+            'category'=>$category,
+            'packages'=>$packages
+        ]);
     }
 
     public function  test()

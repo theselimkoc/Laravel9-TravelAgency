@@ -7,48 +7,54 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-| Test Comment
-*/
-// 1- Do something route
-Route::get('/hello', function () {
-    return 'Hello World';
-});
+            /*
+            |--------------------------------------------------------------------------
+            | Web Routes
+            |--------------------------------------------------------------------------
+            |
+            | Here is where you can register web routes for your application. These
+            | routes are loaded by the RouteServiceProvider within a group which
+            | contains the "web" middleware group. Now create something great!
+            | Test Comment
+            */
+            // 1- Do something route
+            Route::get('/hello', function () {
+                return 'Hello World';
+            });
 
-// 2- Call view in route
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-//3-Call Controller Function
-Route::get('/',[HomeController::class,'index'])->name('home');
+            // 2- Call view in route
+            Route::get('/welcome', function () {
+                return view('welcome');
+            });
+            //3-Call Controller Function
+            Route::get('/',[HomeController::class,'index'])->name('home');
 
-//4-Route-> Controller Function
-Route::get('/test',[HomeController::class,'test'])->name('test');
+            //4-Route-> Controller Function
+            Route::get('/test',[HomeController::class,'test'])->name('test');
 
-//5-Route with parameters
-Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param');
+            //5-Route with parameters
+            Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param');
 
-//6-Route with post
-Route::post('/save',[HomeController::class,'save'])->name('save');
-Route::get('/package',[HomeController::class,'package_all'])->name('package_all');
-Route::get('/package/{id}',[HomeController::class,'package'])->name('package');
+            //6-Route with post
+            Route::post('/save',[HomeController::class,'save'])->name('save');
+            Route::get('/package',[HomeController::class,'package_all'])->name('package_all');
+            Route::get('/package/{id}',[HomeController::class,'package'])->name('package');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+            Route::get('/categorypackages/{id}/{slug}',[HomeController::class,'categorypackages'])->name('categorypackages');
 
-//************************************ADMIN PANEL ROUTES********************
-Route::prefix('admin')->name('admin.')->group(function () {
-Route::get('/',[AdminHomeController::class,'index'])->name('index');
-//************************************ADMIN CATEGORY ROUTES********************//
-        Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
+            Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+                return view('dashboard');
+            })->name('dashboard');
+
+            //************************************ADMIN PANEL ROUTES********************//
+            Route::prefix('admin')->name('admin.')->group(function () {
+            Route::get('/',[AdminHomeController::class,'index'])->name('index');
+            //************************************ADMIN GENERAL ROUTES********************//
+                Route::get('/setting',[AdminHomeController::class,'setting'])->name('setting');
+                Route::get('/setting/update',[AdminHomeController::class,'settingUpdate'])->name('setting.update');
+
+                //************************************ADMIN CATEGORY ROUTES********************//
+            Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
             Route::get('/','index')->name('index');
             Route::get('/create','create')->name('create');
             Route::post('/store','store')->name('store');

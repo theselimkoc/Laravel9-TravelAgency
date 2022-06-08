@@ -63,7 +63,7 @@
                 <li class=""><a href="tabs_panels.html"><i class="icon-angle-right"></i> Reservations </a></li>
         </li>
     </ul>
-        <li class=""><a href="tabs_panels.html"><i class="icon-cogs"></i> Setting </a></li>
+        <li class=""><a href="/admin/setting"><i class="icon-cogs"></i> Setting </a></li>
     </ul>
 </div>
 <!--END MENU SECTION -->
