@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('settings', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('title',150)->nullable();
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
@@ -26,14 +26,15 @@ return new class extends Migration
             $table->string('smtpserver',75)->nullable();
             $table->string('smtpemail',75)->nullable();
             $table->string('smtppassword',15)->nullable();
-            $table->string('smtpport')->nullable()->default(0);
+            $table->integer('smtpport')->nullable()->default(0);
             $table->string('facebook',100)->nullable();
             $table->string('instagram',100)->nullable();
             $table->string('twitter',100)->nullable();
-            $table->string('aboutus')->nullable();
-            $table->string('contact')->nullable();
-            $table->string('references')->nullable();
-            $table->string('icon',5)->nullable();
+            $table->string('youtube',100)->nullable();
+            $table->text('aboutus')->nullable();
+            $table->text('contact')->nullable();
+            $table->text('references')->nullable();
+            $table->string('icon',50)->nullable();
             $table->string('status',5)->nullable()->default('False');
             $table->timestamps();
         });

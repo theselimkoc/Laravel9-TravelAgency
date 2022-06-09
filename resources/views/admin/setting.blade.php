@@ -24,36 +24,143 @@
             </div>
 
             <hr />
+            <form role="form" action="{{route('admin.setting.update')}}" method="post" >
             <div class="panel-body">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#home" data-toggle="tab">Home</a>
+                @csrf
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#general-pills" data-toggle="tab">General</a>
                     </li>
-                    <li><a href="#profile" data-toggle="tab">Profile</a>
+                    <li class=""><a href="#smtp-pills" data-toggle="tab">Smtp Email</a>
                     </li>
-                    <li class=""><a href="#messages" data-toggle="tab">Messages</a>
+                    <li class=""><a href="#socialmedia-pills" data-toggle="tab">Social Media</a>
                     </li>
-                    <li><a href="#settings" data-toggle="tab">Settings</a>
+                    <li class=""><a href="#aboutus-pills" data-toggle="tab">About Us</a>
+                    </li>
+                    <li class=""><a href="#contact-pills" data-toggle="tab">Contact Page</a>
+                    </li>
+                    <li class=""><a href="#references-pills" data-toggle="tab">References</a>
                     </li>
                 </ul>
-
                 <div class="tab-content">
-                    <div class="tab-pane fade active in" id="home">
-                        <h4>Home Tab</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="tab-pane fade active in" id="general-pills">
+                        <h4>General Tab</h4>
+                        <input type="hidden" id="id" value="{{$data->id}}" class="form-control">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input type="text" class="form-control" name="title" value="{{$data->title}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Keywords</label>
+                            <input type="text" class="form-control" name="keywords" value="{{$data->keywords}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <input type="text" class="form-control" name="description" value="{{$data->description}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Company</label>
+                            <input type="text" class="form-control" name="company" value="{{$data->company}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="text" class="form-control" name="address" value="{{$data->address}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Phone</label>
+                            <input type="text" class="form-control" name="phone" value="{{$data->phone}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Fax</label>
+                            <input type="text" class="form-control" name="fax" value="{{$data->fax}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">E-mail</label>
+                            <input type="text" class="form-control" name="email" value="{{$data->email}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="img">Icon</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="icon">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose Icon File</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <select class="form-control" name="status">
+                                <option selected="selected">{{$data->status}}</option>
+                                <option>True</option>
+                                <option>False</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="profile">
-                        <h4>Profile Tab</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="tab-pane fade" id="smtp-pills">
+                        <h4>Smtp Tab</h4>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Smtpserver</label>
+                            <input type="text" class="form-control" name="smtpserver" value="{{$data->smtpserver}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Smtp E-mail</label>
+                            <input type="text" class="form-control" name="smtpemail" value="{{$data->smtpemail}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Smtp password</label>
+                            <input type="text" class="form-control" name="smtppassword" value="{{$data->smtppassword}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Smtp port</label>
+                            <input type="text" class="form-control" name="smtpport" value="{{$data->smtpport}}">
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="messages">
-                        <h4>Messages Tab</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="tab-pane fade" id="socialmedia-pills">
+                        <h4>Social Media Tab</h4>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Facebook</label>
+                            <input type="text" class="form-control" name="facebook" value="{{$data->facebook}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Instagram</label>
+                            <input type="text" class="form-control" name="instagram" value="{{$data->instagram}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Twitter</label>
+                            <input type="text" class="form-control" name="twitter" value="{{$data->twitter}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Youtube</label>
+                            <input type="text" class="form-control" name="youtube" value="{{$data->youtube}}">
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="settings">
-                        <h4>Settings Tab</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="tab-pane fade" id="aboutus-pills">
+                        <h4>About Us</h4>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">About Us</label>
+                            <input type="text" class="form-control" name="aboutus" value="{{$data->aboutus}}">
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="contact-pills">
+                        <h4>Contact</h4>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact</label>
+                            <input type="text" class="form-control" name="contact" value="{{$data->contact}}">
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="references-pills">
+                        <h4>References</h4>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">References</label>
+                            <input type="text" class="form-control" name="references" value="{{$data->references}}">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Update Data</button>
+                    </div>
                     </div>
                 </div>
+            </form>
             </div>
 
 

@@ -51,7 +51,7 @@ use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControlle
             Route::get('/',[AdminHomeController::class,'index'])->name('index');
             //************************************ADMIN GENERAL ROUTES********************//
                 Route::get('/setting',[AdminHomeController::class,'setting'])->name('setting');
-                Route::get('/setting/update',[AdminHomeController::class,'settingUpdate'])->name('setting.update');
+                Route::post('/setting/update',[AdminHomeController::class,'settingsUpdate'])->name('setting.update');
 
                 //************************************ADMIN CATEGORY ROUTES********************//
             Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
