@@ -1,5 +1,3 @@
-<div id="fh5co-wrapper">
-    <div id="fh5co-page">
         <div id="fh5co-header">
             <header id="fh5co-header-section">
                 <div class="container">
@@ -15,5 +13,4 @@
 
         </div>
         <!-- end:fh5co-header -->
-    </div>
-</div>
+

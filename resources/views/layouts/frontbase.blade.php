@@ -8,9 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield("title")</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FREEHTML5.CO" />
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
+    <meta name="author" content="Selim Koç">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
 
     <!--
       //////////////////////////////////////////////////////
@@ -75,20 +76,25 @@
     @yield("head")
 </head>
 <body>
+<div id="fh5co-wrapper">
+    <div id="fh5co-page">
+        @include("home.header")
+        @show
+        @yield('content')
 
 
-@include("home.header")
+        @include("home.footer")
+        @yield('foot')
+    </div>
+</div>
 
 
 
-@show
 
 
-@yield('content')
 
 
-@include("home.footer")
-@yield('foot')
+
 
 <!-- Javascripts -->
 <script src="{{asset('assets')}}/js/jquery-2.1.4.min.js"></script>

@@ -2,8 +2,7 @@
 
 @section('title', 'Add Package')
 @section('head')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script type="text/javascript" src="cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
 @section('content')
     <!--PAGE CONTENT -->
@@ -60,15 +59,13 @@
 
                                     </textarea>
                                     <script>
-                                        ClassicEditor
-                                            .create( document.querySelector( '#detail' ) )
-                                            .then( editor => {
-                                                console.log( editor );
-                                            } )
-                                            .catch( error => {
-                                                console.error( error );
-                                            } );
+                                        $('#detail').summernote({
+                                            placeholder: 'Hello Bootstrap 5',
+                                            tabsize: 2,
+                                            height: 100
+                                        });
                                     </script>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Info</label>

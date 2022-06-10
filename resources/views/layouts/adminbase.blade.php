@@ -12,7 +12,7 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <![endif]-->
     <!-- GLOBAL STYLES -->
     <!-- GLOBAL STYLES -->

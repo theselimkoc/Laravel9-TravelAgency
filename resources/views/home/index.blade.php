@@ -1,9 +1,12 @@
 @extends('layouts.frontbase')
-@section('title', 'Travel Agency Project')
+@section('title', $setting->title)
+@section('description', $setting->title)
+@section('keywords', $setting->title)
+@section('icon', Storage::url($setting->icon))
 
 @section('content')
-    @include("home.slider")
 
+    @include("home.slider")
     <div class="wrap">
         <div class="container">
             <div class="row">

@@ -1,5 +1,5 @@
 @foreach($children as $subcategory)
-    <ul class="list-group">
+
         @if(count($subcategory->children))
             <li style="color: #c67605;font-family: normal ">{{$subcategory->title}}</li>
             <ul class="fh5co-sub-menu">
@@ -8,8 +8,7 @@
             <hr>
         @else
         <li><a href="{{route('categorypackages',['id'=>$subcategory->id, 'slug'=>$subcategory->title])}}">
-                {{$subcategory->title}}
-            </a> </li>
+                {{$subcategory->title}}</a>
+        </li>
         @endif
-    </ul>
 @endforeach

@@ -6,10 +6,12 @@
         @endphp
         @foreach($mainCategories as $rs)
             <li>
-                <a href="#" class="fh5co-sub-down">{{$rs->title}}</a>
+                <a href="#" class="fh5co-sub-ddown">{{$rs->title}}</a>
 
                     @if(count($rs->children))
+                    <ul class="fh5co-sub-menu">
                         @include('home.categorytree',['children'=>$rs->children])
+                    </ul>
                     @endif
 
             </li>
