@@ -6,11 +6,12 @@
 @section('icon',Storage::url($setting->icon))
 
 @section('content')
-    <div class="fh5co-parallax" >
+    <div class="fh5co-parallax">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                <div
+                    class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
                     <div class="fh5co-intro fh5co-table-cell">
                         <h1 class="text-center">References</h1>
                         <p>Companies we are with </p>
@@ -23,9 +24,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-1"
-                    {!! $setting->references !!}
-                </div>
+                {!! $setting->references !!}
             </div>
         </div>
     </div>
-    @endsection
+    </div>
+@endsection

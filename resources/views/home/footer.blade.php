@@ -4,7 +4,8 @@
             <div class="col-md-3">
                 <div class="copyright">
                     <p><small>&copy; 2016 Free HTML5 Template. <br> All Rights Reserved. <br>
-                            Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> <br> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small></p>
+                            Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> <br> Demo Images:
+                            <a href="http://unsplash.com/" target="_blank">Unsplash</a></small></p>
                 </div>
             </div>
             <div class="col-md-6">

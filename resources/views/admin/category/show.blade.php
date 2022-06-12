@@ -63,14 +63,17 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-3">
-                        <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-block btn-info btn-sm" style="width: 100px"> Edit</a>
+                        <a href="{{route('admin.category.edit',['id'=>$data->id])}}"
+                           class="btn btn-block btn-info btn-sm" style="width: 100px"> Edit</a>
                     </div>
                     <div class="col-sm-3 ">
-                        <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" onclick="return confirm('Deleting !! Are you sure ?')" class="btn btn-block btn-danger btn-sm" style="width: 100px"> Delete</a>
+                        <a href="{{route('admin.category.destroy',['id'=>$data->id])}}"
+                           onclick="return confirm('Deleting !! Are you sure ?')"
+                           class="btn btn-block btn-danger btn-sm" style="width: 100px"> Delete</a>
                     </div>
                 </div>
-    </div>
-    <!--END PAGE CONTENT -->
+            </div>
+            <!--END PAGE CONTENT -->
 
 
 @endsection

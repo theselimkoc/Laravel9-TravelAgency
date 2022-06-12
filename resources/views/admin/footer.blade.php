@@ -1,7 +1,7 @@
 </div>
 <!-- FOOTER -->
 <div id="footer">
-    <p>&copy;  binarytheme &nbsp;2014 &nbsp;</p>
+    <p>&copy; SElİM KOÇ &nbsp;2022 &nbsp;</p>
 </div>
 <!--END FOOTER -->
 <!-- GLOBAL SCRIPTS -->

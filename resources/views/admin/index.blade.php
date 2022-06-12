@@ -15,18 +15,13 @@
                     <h2>Blank Page </h2>
 
 
-
                 </div>
             </div>
 
-            <hr />
-
-
+            <hr/>
 
 
         </div>
-
-
 
 
     </div>
