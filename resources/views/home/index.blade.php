@@ -1,8 +1,9 @@
 @extends('layouts.frontbase')
+
 @section('title', $setting->title)
-@section('description', $setting->title)
-@section('keywords', $setting->title)
-@section('icon', Storage::url($setting->icon))
+@section('description',$setting->description)
+@section('keywords',$setting->keywords)
+@section('icon',Storage::url($setting->icon))
 
 @section('content')
 
@@ -17,9 +18,10 @@
                             <section>
                                 <select class="cs-select cs-skin-border">
                                     <option value="" disabled selected>Select Hotel</option>
-                                    <option value="email">Luxe Hotel</option>
-                                    <option value="twitter">Deluxe Hotel</option>
-                                    <option value="linkedin">Five Star Hotel</option>
+                                    @foreach($packagelist1 as $rs)
+
+                                    <option value="email">{{$rs->title}}</option>
+                                    @endforeach
                                 </select>
                             </section>
                         </div>

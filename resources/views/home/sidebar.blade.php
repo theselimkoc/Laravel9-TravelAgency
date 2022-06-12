@@ -1,6 +1,8 @@
 <nav id="fh5co-menu-wrap" role="navigation">
     <ul class="sf-menu" id="fh5co-primary-menu">
         <li style="color: #1a1a1a" ><a href="{{route('home')}}">Home</a></li>
+        <li><a href="{{route('about')}}">About</a></li>
+        <li><a href="{{route('references')}}">References</a></li>
         @php
             $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
         @endphp
@@ -18,6 +20,6 @@
         @endforeach
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="{{route('contact')}}">Contact</a></li>
     </ul>
 </nav>

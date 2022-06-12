@@ -25,21 +25,20 @@
             </ul>
         </div>
         </div>
-        <div id="hotel-facilities" style="height: 1187px;">
+        <div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-title text-center">
                             <h2>Other Details</h2>
                         </div>
-                        <div class="col-md-12">
+                        <div id="fh5co-services-section">
                             <span class="super-heading-sm"></span>
                             <h1 class="text-center">{{$data->title}}</h1>
                             <p>{{$data->description}}</p>
-                            <h3 class="heading">{{$data->info}}</h3>
-                            <p>{{$data->detail}}</p>
-                            <span>Price: {{$data->price}} $</span>
-                            </p>
+                            <p>{!! $data->detail !!}</p>
+                            <span>Price:  ${{$data->price}}</span>
+
                         </div>
                     </div>
                 </div>

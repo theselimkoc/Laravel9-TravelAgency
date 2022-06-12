@@ -1,13 +1,15 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Settings')
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
     <!--PAGE CONTENT -->
     <div id="content">
 
-        <div class="inner" style="min-height:1200px;">
+        <div class="inner" style="padding: 15px">
             <div class="row">
                 <div class="col-lg-12">
 
@@ -30,7 +32,7 @@
                 <ul class="nav nav-pills">
                     <li class="active"><a href="#general-pills" data-toggle="tab">General</a>
                     </li>
-                    <li class=""><a href="#smtp-pills" data-toggle="tab">Smtp Email</a>
+                    <li class=""><a href="#smtp-pills" data-toggle="tab">Smtp Tab</a>
                     </li>
                     <li class=""><a href="#socialmedia-pills" data-toggle="tab">Social Media</a>
                     </li>
@@ -62,8 +64,8 @@
                             <input type="text" class="form-control" name="company" value="{{$data->company}}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Address</label>
-                            <input type="text" class="form-control" name="address" value="{{$data->address}}">
+                            <label for="exampleInputEmail1">Adress</label>
+                            <input type="text" class="form-control" name="address" value="{{$data->adress}}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Phone</label>
@@ -79,12 +81,9 @@
                         </div>
                         <div class="form-group">
                             <label for="img">Icon</label>
-                            <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="icon">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose Icon File</label>
+                                    <input type="file" class="custom-file-input" name="icon" id="icon">
                                 </div>
-                            </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Status</label>
@@ -137,24 +136,61 @@
                     <div class="tab-pane fade" id="aboutus-pills">
                         <h4>About Us</h4>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">About Us</label>
-                            <input type="text" class="form-control" name="aboutus" value="{{$data->aboutus}}">
+                            <textarea class="form-control" id="aboutus" name="aboutus" value="{{$data->aboutus}}">
+{{$data->aboutus}}
+                                    </textarea>
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#aboutus' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
+
                         </div>
                     </div>
                     <div class="tab-pane fade" id="contact-pills">
                         <h4>Contact</h4>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Contact</label>
-                            <input type="text" class="form-control" name="contact" value="{{$data->contact}}">
+                            <textarea class="form-control" id="contact" name="contact" value="{{$data->contact}}">
+{{$data->contact}}
+                                    </textarea>
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#contact' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
+
                         </div>
                     </div>
                     <div class="tab-pane fade" id="references-pills">
                         <h4>References</h4>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">References</label>
-                            <input type="text" class="form-control" name="references" value="{{$data->references}}">
+                            <textarea class="form-control" id="references" name="references" value="{{$data->references}}">
+{{$data->references}}
+                                    </textarea>
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#references' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
+
                         </div>
                     </div>
+
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Update Data</button>
                     </div>
@@ -163,11 +199,7 @@
             </form>
             </div>
 
-
-
-
     </div>
     <!--END PAGE CONTENT -->
-</div>
-
 @endsection
+

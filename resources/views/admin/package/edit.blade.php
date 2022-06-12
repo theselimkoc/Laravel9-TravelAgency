@@ -2,7 +2,7 @@
 
 @section('title', 'Edit Category : '.$data->title)
 @section('head')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -55,10 +55,23 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Detail</label>
-                                    <textarea class="form-control" name="detail" value="{{$data->detail}}">
+                                    <textarea class="form-control" id="detail" name="detail" value="{{$data->detail}}">
 {{$data->detail}}
                                     </textarea>
+                                    <script>
+                                        ClassicEditor
+                                            .create( document.querySelector( '#detail' ) )
+                                            .then( editor => {
+                                                console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
+
                                 </div>
+
+
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Info</label>
                                     <input type="text" class="form-control" name="info" value="{{$data->info}}">
@@ -94,13 +107,5 @@
 
     </div>
     <!--END PAGE CONTENT -->
-
-@section('foot')
-     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script>
-        $(function (){
-            //$summernote
-            $('.textarea').summernote()
-        } )
-    </script>
 @endsection
+
