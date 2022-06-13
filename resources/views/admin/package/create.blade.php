@@ -31,7 +31,7 @@
                                       enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
-                                        <label>Parent Product</label>
+                                        <label>Parent Package</label>
                                         <select class="form-control select2" name="category_id">
                                             @foreach($data as $rs)
                                                 <option

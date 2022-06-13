@@ -36,8 +36,8 @@
                 <i class="icon-comments"></i> Comments</a>
         </li>
         <li class="panel">
-            <a href="/admin/faq">
-                <i class="icon-question-sign"></i> Faq</a>
+            <a href="{{route('admin.faq.index')}}">
+                <i class="icon-question-sign"></i> FAQ</a>
         </li>
         <li class="panel">
             <a href="{{route('admin.message.index')}}">

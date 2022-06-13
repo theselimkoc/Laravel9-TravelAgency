@@ -18,8 +18,7 @@
 
             </li>
         @endforeach
-        <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="{{route('faq')}}">FAQ</a></li>
         <li><a href="{{route('contact')}}">Contact</a></li>
     </ul>
 </nav>
