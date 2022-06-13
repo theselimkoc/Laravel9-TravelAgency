@@ -8,6 +8,7 @@ use App\Models\Message;
 use App\Models\Packages as Package;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -130,4 +131,16 @@ class HomeController extends Controller
             ]);
 
     }
+    public function  logoutuser(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+
+    }
+
 }

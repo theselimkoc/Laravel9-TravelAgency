@@ -20,5 +20,12 @@
         @endforeach
         <li><a href="{{route('faq')}}">FAQ</a></li>
         <li><a href="{{route('contact')}}">Contact</a></li>
+        @auth
+            <li><a href="/loginuser">{{Auth::user()->name}}</a></li>
+            <li><a href="/logoutuser">Log out</a></li>
+        @endauth
+        @guest()
+        <li><a href="/loginuser">Login</a></li><li><a href="/register">Register</a></li>
+        @endguest
     </ul>
 </nav>

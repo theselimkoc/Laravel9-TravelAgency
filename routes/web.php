@@ -35,7 +35,9 @@
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
     Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
-
+    Route::view('/loginuser','home.login');
+    Route::view('/register','home.register');
+    Route::get('/logoutuser', [HomeController::class, 'logoutuser'])->name('logoutuser');
     //4-Route-> Controller Function
     Route::get('/test', [HomeController::class, 'test'])->name('test');
 
