@@ -38,9 +38,9 @@
     <div class="tab-content">
         <div id="login" class="tab-pane active">
             @include('home.messages')
-            <form action="{{route('loginadmincheck')}}" class="form-signin">
+            <form action="{{route('loginadmincheck')}}" class="form-signin" method="post">
                 @csrf
-                <p class="text-muted text-center btn-block btn btn-primary btn-rect">
+                <p class="tex t-muted text-center btn-block btn btn-primary btn-rect">
                     Enter your username and password
                 </p>
                 <input type="email" name="email" placeholder="Email" class="form-control" />
@@ -59,7 +59,7 @@
         <div id="signup" class="tab-pane">
             <form action="index.html" class="form-signin">
                 <p class="text-muted text-center btn-block btn btn-primary btn-rect">Please Fill Details To Register</p>
-                <input type="text" placeholder="First Name" class="form-control" />
+                <input type="text" placeholder=" First Name" class="form-control" />
                 <input type="text" placeholder="Last Name" class="form-control" />
                 <input type="text" placeholder="Username" class="form-control" />
                 <input type="email" placeholder="Your E-mail" class="form-control" />
@@ -72,8 +72,7 @@
     <div class="text-center">
         <ul class="list-inline">
             <li><a class="text-muted" href="/loginuser" data-toggle="tab">Login</a></li>
-            <li><a class="text-muted" href="/resgisteruser" data-toggle="tab">Forgot Password</a></li>
-            <li><a class="text-muted" href="#signup" data-toggle="tab">Signup</a></li>
+            <li><a class="text-muted" href="/registeruser" data-toggle="tab">Signup</a></li>
         </ul>
     </div>
 

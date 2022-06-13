@@ -153,7 +153,6 @@ class HomeController extends Controller
 
     public function loginadmincheck(Request $request)
     {
-        dd($request);
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -166,8 +165,8 @@ class HomeController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('error');
+            'error' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
 
 
